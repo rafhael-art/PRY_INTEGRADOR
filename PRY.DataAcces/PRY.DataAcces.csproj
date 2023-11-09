@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Interfaces\" />
+    <None Remove="Servicios\" />
+    <None Remove="Bases\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Servicios\" />
+    <Folder Include="Bases\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PRY.Domain\PRY.Domain.csproj" />
+    <ProjectReference Include="..\PRY.Common\PRY.Common.csproj" />
+  </ItemGroup>
+</Project>

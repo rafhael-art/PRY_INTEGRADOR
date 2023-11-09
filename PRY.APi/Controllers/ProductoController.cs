@@ -6,11 +6,11 @@ namespace PRY.APi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioController : ControllerBase
+    public class ProductoController : ControllerBase
     {
-        private readonly IUsuarioService _service;
+        private readonly IProductoService _service;
 
-        public UsuarioController(IUsuarioService service)
+        public ProductoController(IProductoService service)
         {
             _service = service;
         }
@@ -23,7 +23,7 @@ namespace PRY.APi.Controllers
             return Ok(response);
         }
 
-        [HttpGet("/{id}")]
+        [HttpGet("{/id}")]
         public async Task<IActionResult> GeyById(int id)
         {
 
@@ -32,17 +32,17 @@ namespace PRY.APi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Save([FromBody] Usuario usuario)
+        public async Task<IActionResult> Save([FromBody] Producto producto)
         {
-            var response = await _service.Save(usuario);
+            var response = await _service.Save(producto);
             return Ok(response);
         }
 
         [HttpPut]
-        public async Task<IActionResult> Edit([FromBody] Usuario usuario)
+        public async Task<IActionResult> Edit([FromBody] Producto producto)
         {
 
-            var response = await _service.Edit(usuario);
+            var response = await _service.Edit(producto);
             return Ok(response);
         }
 

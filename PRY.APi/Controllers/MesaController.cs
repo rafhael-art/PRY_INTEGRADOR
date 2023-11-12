@@ -8,7 +8,7 @@ namespace PRY.APi.Controllers
     [ApiController]
     public class MesaController : ControllerBase
     {
-        private readonly IRolService _service;
+        private readonly IMesaService _service;
 
         public MesaController(IMesaService service)
         {
@@ -23,7 +23,7 @@ namespace PRY.APi.Controllers
             return Ok(response);
         }
 
-        [HttpGet("{/id}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GeyById(int id)
         {
 
@@ -46,7 +46,7 @@ namespace PRY.APi.Controllers
             return Ok(response);
         }
 
-        [HttpDelete("/{id}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteById(int id)
         {
 
